@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "generated": "2026-02-22T17:41:05.858499",
+    "deal_size_usd": 1000000000,
+    "description": "Hypothetical $1B LBO waterfall - sources & uses. Based on typical transaction 2020-2024.",
+    "source": "PE industry standard structures + SEC S-4/8-K filings (Dell, Petco, Bausch Health, etc.)",
+    "notes": [
+      "The target company \u2014 not the PE firm \u2014 is responsible for the debt raised.",
+      "Transaction fees ($25M) are paid upfront to advisors but born by the company through higher debt needs.",
+      "Management fee at close ($150M) goes directly to the GP for 'monitoring' before any value creation.",
+      "Debt breakdown uses covenant-lite proliferation (2015+ market: 70-80% covenant-lite)."
+    ]
+  },
+  "sources_uses": {
+    "sources": [
+      {
+        "label": "PE Fund Equity",
+        "amount": 350000000.0,
+        "pct_of_total": 35.0,
+        "description": "Committed capital from fund's LPs",
+        "color": "#2D7B2D",
+        "step": 1
+      },
+      {
+        "label": "Senior Secured Debt (First Lien)",
+        "amount": 260000000.0,
+        "pct_of_total": 26.0,
+        "rate_range": "SOFR + 275-325 bps",
+        "maturity_years": 7,
+        "description": "Revolving credit + Term Loan A (first lien, covenanted)",
+        "color": "#D97706",
+        "step": 2
+      },
+      {
+        "label": "Term Loan B (Covenant-Lite)",
+        "amount": 227500000.0,
+        "pct_of_total": 22.749999999999996,
+        "rate_range": "SOFR + 400-450 bps",
+        "maturity_years": 8,
+        "description": "Unsecured, no maintenance covenants (2007+ market standard)",
+        "color": "#DC2626",
+        "step": 3
+      },
+      {
+        "label": "Mezzanine / 2nd Lien",
+        "amount": 97500000.0,
+        "pct_of_total": 9.75,
+        "rate_range": "SOFR + 550-650 bps",
+        "maturity_years": 10,
+        "description": "Subordinated, higher spread for lower seniority",
+        "color": "#7C3AED",
+        "step": 4
+      },
+      {
+        "label": "PIK Toggle Notes",
+        "amount": 65000000.0,
+        "pct_of_total": 6.5,
+        "rate_range": "12-14% (toggle: pay in cash or add to principal)",
+        "maturity_years": 12,
+        "description": "Payment-in-kind option: if cash is tight, accrue as debt",
+        "color": "#991B1B",
+        "step": 5
+      }
+    ],
+    "uses": [
+      {
+        "label": "Purchase Price",
+        "amount": 1000000000,
+        "pct_of_total": 84.4059928254906,
+        "description": "Goes to selling shareholders",
+        "color": "#1F2937",
+        "step": 6
+      },
+      {
+        "label": "Transaction Fees",
+        "amount": 25000000.0,
+        "pct_of_total": 2.110149820637265,
+        "description": "Investment bankers, legal, advisors (2.5% of deal size)",
+        "color": "#F59E0B",
+        "step": 7
+      },
+      {
+        "label": "Financing Fees",
+        "amount": 9750000.0,
+        "pct_of_total": 0.8229584300485334,
+        "description": "Debt arrangers, documentation, agent fees (1.5% of debt raised)",
+        "color": "#FBBF24",
+        "step": 8
+      },
+      {
+        "label": "Management Fee at Close",
+        "amount": 150000000,
+        "pct_of_total": 12.660898923823591,
+        "description": "Paid to PE firm for 'monitoring' and advisory services (sometimes 15% of deal)",
+        "recipient": "PE Fund GP",
+        "color": "#EF4444",
+        "step": 9
+      }
+    ]
+  },
+  "leverage_metrics": {
+    "total_debt": 650000000.0,
+    "total_equity": 350000000.0,
+    "total_sources_uses": 1184750000.0,
+    "debt_to_equity_ratio": 1.8571428571428572,
+    "leverage_multiple": "~1.9x",
+    "note": "Actual leverage depends on target EBITDA. If $150M EBITDA, debt/EBITDA = ~4.3x. If $100M EBITDA, ~6.5x."
+  }
+}

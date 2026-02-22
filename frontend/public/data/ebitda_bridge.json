@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "generated": "2026-02-22T17:41:05.858530",
+    "description": "Value creation attribution in a typical PE-backed company over 5-year hold period",
+    "source": "Axelson et al., Kaplan & Str\u00f6mberg, NBER working papers; SEC filings",
+    "key_finding": "In 2010s, ~60% of PE returns came from multiple expansion (market-driven), not operational improvement",
+    "scenario": {
+      "company": "Unnamed $100M EBITDA industrial services company",
+      "entry_year": 2019,
+      "exit_year": 2024,
+      "hold_period_years": 5
+    }
+  },
+  "entry_snapshot": {
+    "revenue_estimated": 550000000.0,
+    "ebitda": 100000000,
+    "ebitda_margin_pct": 18.181818181818183,
+    "purchase_price": 1000000000.0,
+    "purchase_multiple_ebitda": 10.0,
+    "debt_raised": 500000000.0,
+    "leverage_multiple": 5.0,
+    "equity_invested": 400000000.0
+  },
+  "exit_snapshot": {
+    "revenue_estimated": 852210284.5440004,
+    "ebitda": 146932807.68000007,
+    "ebitda_margin_pct": 18.74137931034483,
+    "sale_price": 1763193692.1600008,
+    "sale_multiple_ebitda": 12.0,
+    "debt_repaid": 514264826.88000023,
+    "leverage_multiple_exit": 3.5,
+    "equity_value": 1248928865.2800007
+  },
+  "value_creation_waterfall": [
+    {
+      "step": 1,
+      "driver": "EBITDA Growth",
+      "amount": 469328076.80000067,
+      "pct_of_total": 70.11928724756585,
+      "description": "8% annual revenue growth + margin management \u2192 EBITDA grows 46.9%",
+      "color": "#2563EB"
+    },
+    {
+      "step": 2,
+      "driver": "Multiple Expansion",
+      "amount": 200000000.0,
+      "pct_of_total": 29.880712752434146,
+      "description": "Market sentiment shift: 10.0x \u2192 12.0x (not operational improvement)",
+      "color": "#059669",
+      "note": "This is market-driven, not value-created by PE firm"
+    },
+    {
+      "step": 3,
+      "driver": "Leverage Paydown",
+      "amount": -14264826.880000234,
+      "pct_of_total_debt_reduction": -2.852965376000047,
+      "description": "Debt reduced 5.0x \u2192 3.5x, freeing up -14M for equity holders",
+      "color": "#7C3AED"
+    }
+  ],
+  "equity_returns": {
+    "equity_invested": 400000000.0,
+    "equity_realized": 1248928865.2800007,
+    "profit": 848928865.2800007,
+    "moic": 3.1223221632000016,
+    "irr_pct": 25.572789643705818,
+    "fee_impact": {
+      "management_fees_5yr": 40000000.0,
+      "carried_interest_pct": 20,
+      "net_carry_on_profit": 169785773.05600014,
+      "note": "Typical GP takes 20% carry (far share of this upside)"
+    }
+  },
+  "comparative_benchmark": {
+    "s_p_500_cagr_same_period": 0.12,
+    "s_p_500_moic": 1.7623416832000007,
+    "pe_fund_moic": 3.1223221632000016,
+    "outperformance_moic": 1.3599804800000008,
+    "note": "This hypothetical PE return beats public markets, but is representative only during favorable multiple environments"
+  }
+}

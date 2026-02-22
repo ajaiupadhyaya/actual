@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "generated": "2026-02-22T17:41:05.858518",
+    "description": "Typical PE LBO capital stack breakdown with rates, terms, covenant structure, and default recovery order.",
+    "source": "LCD/LSTA (Loan Syndications & Trading Assoc), SIFMA, recent 10-K/8-K filings (2020-2024)",
+    "assumptions": {
+      "base_rate": "SOFR",
+      "sofr_level_date": "2024-02-01",
+      "sofr_rate": 5.33,
+      "recovery_rates": "Based on historical recovery studies after restructuring"
+    }
+  },
+  "tranches": [
+    {
+      "rank": 1,
+      "name": "Senior Secured Revolving Credit",
+      "tranche_type": "Revolver",
+      "size_pct": 0.15,
+      "size_representative": "$150M",
+      "typical_spread_bps": 300,
+      "all_in_rate": "SOFR + 300 = ~8.3%",
+      "maturity_years": 7,
+      "covenant_structure": "Maintenance covenants: max net leverage, min interest coverage",
+      "seniority": "First lien",
+      "recovery_in_default": 0.95,
+      "typical_holders": "Lead banks, agent bank",
+      "color": "#059669",
+      "icon": "shield-check"
+    },
+    {
+      "rank": 2,
+      "name": "Senior Secured TL-A",
+      "tranche_type": "Term Loan A",
+      "size_pct": 0.25,
+      "size_representative": "$250M",
+      "typical_spread_bps": 325,
+      "all_in_rate": "SOFR + 325 = ~8.6%",
+      "maturity_years": 7,
+      "covenant_structure": "Maintenance covenants (less strict than revolver)",
+      "seniority": "First lien, same-day basis as revolver",
+      "recovery_in_default": 0.92,
+      "typical_holders": "Banks, credit funds",
+      "color": "#10B981",
+      "icon": "shield"
+    },
+    {
+      "rank": 3,
+      "name": "Senior Secured TL-B (Covenant-Lite)",
+      "tranche_type": "Term Loan B",
+      "size_pct": 0.35,
+      "size_representative": "$350M",
+      "typical_spread_bps": 425,
+      "all_in_rate": "SOFR + 425 = ~9.6%",
+      "maturity_years": 8,
+      "covenant_structure": "NO maintenance covenants (only financial reporting)",
+      "seniority": "First lien, but often second-day basis or cash sweep subordination",
+      "recovery_in_default": 0.85,
+      "typical_holders": "CLO equity, direct lenders, hedge funds",
+      "color": "#F59E0B",
+      "icon": "alert-circle"
+    },
+    {
+      "rank": 4,
+      "name": "Second Lien / PIK Lender",
+      "tranche_type": "Term Loan / Secured Notes",
+      "size_pct": 0.15,
+      "size_representative": "$150M",
+      "typical_spread_bps": 600,
+      "all_in_rate": "SOFR + 600 = ~11.3% (or 12% PIK toggle)",
+      "maturity_years": 9,
+      "covenant_structure": "Minimal; if cash troubled, payment-in-kind (PIK) toggle allows compounding interest",
+      "seniority": "Second lien (subordinated to TL-A/B)",
+      "recovery_in_default": 0.45,
+      "typical_holders": "Unitranche funds, BDCs, direct credit investors",
+      "color": "#DC2626",
+      "icon": "alert-triangle"
+    },
+    {
+      "rank": 5,
+      "name": "Preferred Equity / Mezz",
+      "tranche_type": "Preferred Stock / Mezzanine",
+      "size_pct": 0.05,
+      "size_representative": "$50M",
+      "typical_spread_bps": null,
+      "all_in_rate": "10-12% coupon",
+      "maturity_years": 10,
+      "covenant_structure": "Dividend gating (suspended if covenant breach)",
+      "seniority": "Subordinated to all debt",
+      "recovery_in_default": 0.15,
+      "typical_holders": "Growth funds, co-invest sponsors",
+      "color": "#8B5CF6",
+      "icon": "flag"
+    },
+    {
+      "rank": 6,
+      "name": "Common Equity (PE Fund)",
+      "tranche_type": "Equity",
+      "size_pct": 0.05,
+      "size_representative": "$50M",
+      "typical_spread_bps": null,
+      "all_in_rate": "Target: 20-30%+ IRR (average 18-25% across fund)",
+      "maturity_years": 5.5,
+      "covenant_structure": "N/A (equity holder)",
+      "seniority": "Last (residual claimant)",
+      "recovery_in_default": 0.0,
+      "typical_holders": "PE fund LPs receive distributions",
+      "color": "#059669",
+      "icon": "trending-up"
+    }
+  ],
+  "default_waterfall": {
+    "description": "In a restructuring, losses cascade down the capital stack",
+    "scenario": "$650M asset value (65% recovery on $1B original purchase price + growth)",
+    "steps": [
+      {
+        "tranche": "Senior Secured Revolving Credit",
+        "amount_owed": 75000000,
+        "amount_recovered": 75000000,
+        "recovery_rate": 1.0,
+        "impact": "Fully recovers"
+      },
+      {
+        "tranche": "Senior Secured TL-A",
+        "amount_owed": 250000000,
+        "amount_recovered": 250000000,
+        "recovery_rate": 1.0,
+        "impact": "Fully recovers"
+      },
+      {
+        "tranche": "Senior Secured TL-B",
+        "amount_owed": 350000000,
+        "amount_recovered": 325000000,
+        "recovery_rate": 0.93,
+        "impact": "~93% recovery ($25M loss)"
+      },
+      {
+        "tranche": "Second Lien / PIK",
+        "amount_owed": 150000000,
+        "amount_recovered": 0,
+        "recovery_rate": 0.0,
+        "impact": "Total loss"
+      },
+      {
+        "tranche": "Preferred Equity",
+        "amount_owed": 50000000,
+        "amount_recovered": 0,
+        "recovery_rate": 0.0,
+        "impact": "Total loss"
+      },
+      {
+        "tranche": "Common Equity (PE Fund)",
+        "amount_owed": 50000000,
+        "amount_recovered": 0,
+        "recovery_rate": 0.0,
+        "impact": "Total loss"
+      }
+    ]
+  }
+}

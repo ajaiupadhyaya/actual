@@ -1,0 +1,11 @@
+{
+  "generated": "2026-02-22T17:41:05.859241",
+  "act": "Act 2: Anatomy of a Buyout",
+  "datasets": [
+    "lbo_waterfall",
+    "debt_structure",
+    "ebitda_bridge"
+  ],
+  "total_files": 3,
+  "output_directory": "/Users/ajaiupadhyaya/Documents/actual/data-pipeline/../frontend/public/data"
+}
